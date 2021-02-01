@@ -1,0 +1,751 @@
+@import url("font.css");
+.navigation {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  top: 30px;
+  left: 0;
+  z-index: 50;
+}
+
+.navigation .navContent {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35% 65%;
+      grid-template-columns: 35% 65%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation .navContent ul {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation .navContent ul {
+    display: none;
+  }
+}
+
+.navigation .navContent ul a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navigation .navContent ul a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  bottom: -8px;
+  background: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navigation .navContent ul a:hover::before {
+  width: 100%;
+}
+
+.navigation .navContent .hamburger {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation .navContent .hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navigation .navContent .hamburger span {
+  position: relative;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navigation .navContent .hamburger span::before, .navigation .navContent .hamburger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navigation .navContent .hamburger span::before {
+  top: 8px;
+}
+
+.navigation .navContent .hamburger span::after {
+  top: -8px;
+}
+
+.navigation .navContent .hamb_open span {
+  background: transparent;
+}
+
+.navigation .navContent .hamb_open span::before {
+  top: 0px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.navigation .navContent .hamb_open span::after {
+  top: 0px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.navigation_resp {
+  display: none;
+  position: fixed;
+  z-index: -10;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  background: black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation_resp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navigation_resp ul {
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 30px;
+}
+
+.navigation_resp ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "jf-light";
+}
+
+.open {
+  z-index: 45 !important;
+  opacity: 1 !important;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 40px 0;
+}
+
+footer .footerContent .foot1,
+footer .footerContent .foot2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 40%;
+      grid-template-columns: 60% 40%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  footer .footerContent .foot1,
+  footer .footerContent .foot2 {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    text-align: center;
+  }
+}
+
+footer .footerContent .foot1 div:nth-child(2),
+footer .footerContent .foot2 div:nth-child(2) {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+@media screen and (max-width: 767px) {
+  footer .footerContent .foot1 div:nth-child(2),
+  footer .footerContent .foot2 div:nth-child(2) {
+    -ms-grid-column-align: initial;
+        justify-self: initial;
+  }
+}
+
+footer .footerContent .foot1 div:nth-child(1) img {
+  width: 135px;
+}
+
+@media screen and (max-width: 767px) {
+  footer .footerContent .foot1 div:nth-child(2) {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+  }
+}
+
+footer .footerContent .foot1 div:nth-child(2) a {
+  margin-left: 10px;
+  position: relative;
+}
+
+footer .footerContent .foot1 div:nth-child(2) a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  bottom: -8px;
+  background: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .footerContent .foot1 div:nth-child(2) a:hover::before {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  footer .footerContent .foot1 div:nth-child(2) a {
+    margin-left: inherit;
+    margin: 0 10px;
+  }
+}
+
+footer .footerContent .foot2 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+  footer .footerContent .foot2 .links {
+    display: -ms-grid;
+    display: grid;
+    grid-row-gap: 15px;
+    margin-bottom: 80px;
+  }
+}
+
+footer .footerContent .foot2 .links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+footer .footerContent .foot2 .links a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  bottom: -8px;
+  background: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .footerContent .foot2 .links a:hover::before {
+  width: 100%;
+}
+
+footer .footerContent .foot2 .rights {
+  color: #8c8c8c;
+}
+
+* p,
+* h1,
+* h2,
+* h3,
+* h4 {
+  margin: 0;
+}
+
+* ul,
+* li {
+  list-style-type: none;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-family: "jf-regular";
+}
+
+.container {
+  position: relative;
+  max-width: 1320px;
+  margin: auto auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 650px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    height: 100vh;
+    min-height: 450px;
+  }
+}
+
+header .headerContent {
+  border: 1px solid white;
+  padding: 40px;
+  width: 40em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  header .headerContent {
+    width: 540px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header .headerContent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header .headerContent {
+    padding: 30px;
+  }
+}
+
+header .headerContent h1 {
+  font-size: 70px;
+  font-family: "jf-light";
+  font-weight: 300;
+}
+
+@media screen and (max-width: 1199px) {
+  header .headerContent h1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header .headerContent h1 {
+    font-size: 43px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header .headerContent h1 {
+    font-size: 34px;
+  }
+}
+
+#interactive {
+  position: relative;
+  padding: 130px 0;
+}
+
+#interactive .icText {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: white;
+  width: 30em;
+  padding: 80px;
+}
+
+@media screen and (max-width: 1199px) {
+  #interactive .icText {
+    width: 25em;
+    padding: 60px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #interactive .icText {
+    width: 20em;
+    padding: 35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #interactive .icText {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #interactive .icText {
+    padding: 35px 0;
+    padding-bottom: 0;
+  }
+}
+
+#interactive .icText h3 {
+  font-size: 40px;
+  font-family: "jf-light";
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  #interactive .icText h3 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #interactive .icText h3 {
+    font-size: 30px;
+  }
+}
+
+#interactive .icText p {
+  color: dimgray;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 1199px) {
+  #interactive .icImg img {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #interactive .icImg img {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #interactive .icImg img {
+    width: 100%;
+  }
+}
+
+#creations {
+  position: relative;
+  padding-bottom: 130px;
+}
+
+#creations .ccTittle {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 75% 25%;
+      grid-template-columns: 75% 25%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 575px) {
+  #creations .ccTittle {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    text-align: center;
+  }
+}
+
+#creations .ccTittle h3 {
+  font-size: 40px;
+  font-family: "jf-light";
+  font-weight: 300;
+}
+
+@media screen and (max-width: 400px) {
+  #creations .ccTittle h3 {
+    font-size: 30px;
+  }
+}
+
+#creations .ccTittle a {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+#creations .ccTittle a button {
+  position: relative;
+  border: none;
+  z-index: 1;
+  padding: 8px 30px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-family: "jf-light";
+}
+
+#creations .ccTittle a button::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #8c8c8c;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#creations .ccTittle a button:hover::before {
+  width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  #creations .ccTittle a button {
+    display: none;
+  }
+}
+
+#creations .ccCards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+}
+
+@media screen and (max-width: 991px) {
+  #creations .ccCards {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #creations .ccCards {
+    display: none;
+  }
+}
+
+#creations .ccCards .creationCard {
+  position: relative;
+  margin: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  #creations .ccCards .creationCard {
+    margin: 15px 0;
+  }
+}
+
+#creations .ccCards .creationCard .ccbg {
+  position: relative;
+}
+
+#creations .ccCards .creationCard .ccbg::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
+  background: linear-gradient(to top, black, transparent);
+  z-index: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  #creations .ccCards .creationCard .ccbg::before {
+    height: 80%;
+  }
+}
+
+#creations .ccCards .creationCard .ccbg img {
+  width: 100%;
+}
+
+#creations .ccCards .creationCard .cctext {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  font-family: "jf-light";
+  font-size: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  #creations .ccCards .creationCard .cctext {
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+#creations .ccCards .creationCard:hover .ccbg::before {
+  background: white;
+  height: 100%;
+  opacity: 0.8;
+}
+
+#creations .ccCards .creationCard:hover .cctext {
+  color: black;
+}
+
+#creations .ccCardsResp {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  #creations .ccCardsResp {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+}
+
+#creations .buttonResp {
+  display: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 575px) {
+  #creations .buttonResp {
+    display: block;
+  }
+}
+
+#creations .buttonResp a button {
+  position: relative;
+  border: none;
+  z-index: 1;
+  padding: 8px 30px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-family: "jf-light";
+  background: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 40px;
+  margin-top: 30px;
+}
+
+#creations .buttonResp a button::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #8c8c8c;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#creations .buttonResp a button:hover::before {
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

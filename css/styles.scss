@@ -1,0 +1,388 @@
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 55%);
+$veryDarkGray: hsl(0, 0%, 41%);
+
+$font-family: (
+    "alata": "alata",
+    "bold": "jf-bold",
+    "regular": "jf-regular",
+    "light": "jf-light",
+    "medium": " jf-medium",
+);
+
+@mixin animation-a {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: -8px;
+        background: $white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+@mixin button1 {
+    position: relative;
+    border: none;
+    z-index: 1;
+    padding: 8px 30px;
+    cursor: pointer;
+    background-color: $black;
+    color: $white;
+    font-family: map-get($font-family, light);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $darkGray;
+        z-index: -1;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+@import url("font.css");
+@import "nav";
+@import "footer";
+
+* p,
+* h1,
+* h2,
+* h3,
+* h4 {
+    margin: 0;
+}
+
+* ul,
+* li {
+    list-style-type: none;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: map-get($font-family, regular);
+}
+
+.container {
+    position: relative;
+    max-width: 1320px;
+    margin: auto auto;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1400px) {
+        max-width: 1140px;
+    }
+
+    @media screen and (max-width: 1199px) {
+        max-width: 960px;
+    }
+
+    @media screen and (max-width: 991px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 540px;
+    }
+
+    @media screen and (max-width: 575px) {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../images/desktop/image-hero.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 650px;
+    color: $white;
+    display: flex;
+
+    @media screen and (max-width: 575px) {
+        height: 100vh;
+        min-height: 450px;
+    }
+
+    .headerContent {
+        border: 1px solid white;
+        padding: 40px;
+        width: 40em;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 767px) {
+            width: 540px;
+        }
+
+        @media screen and (max-width: 575px) {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 400px) {
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 70px;
+            font-family: map-get($font-family, light);
+            font-weight: 300;
+
+            @media screen and (max-width: 1199px) {
+                font-size: 60px;
+            }
+
+            @media screen and (max-width: 575px) {
+                font-size: 43px;
+            }
+
+            @media screen and (max-width: 400px) {
+                font-size: 34px;
+            }
+        }
+    }
+}
+
+#interactive {
+    position: relative;
+    padding: 130px 0;
+
+    .icText {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: $white;
+        width: 30em;
+        padding: 80px;
+
+        @media screen and (max-width: 1199px) {
+            width: 25em;
+            padding: 60px;
+        }
+
+        @media screen and (max-width: 991px) {
+            width: 20em;
+            padding: 35px;
+        }
+
+        @media screen and (max-width: 767px) {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 400px) {
+            padding: 35px 0;
+            padding-bottom: 0;
+        }
+
+        h3 {
+            font-size: 40px;
+            font-family: map-get($font-family, light);
+            font-weight: 300;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 35px;
+            }
+
+            @media screen and (max-width: 400px) {
+                font-size: 30px;
+            }
+        }
+
+        p {
+            color: $veryDarkGray;
+            line-height: 20px;
+        }
+    }
+
+    .icImg {
+        img {
+            @media screen and (max-width: 1199px) {
+                width: 600px;
+            }
+
+            @media screen and (max-width: 991px) {
+                width: 500px;
+            }
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+///////////////creation cards
+
+#creations {
+    position: relative;
+    padding-bottom: 130px;
+
+    .ccTittle {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        align-items: center;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 575px) {
+            grid-template-columns: 100%;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 40px;
+            font-family: map-get($font-family, light);
+            font-weight: 300;
+
+            @media screen and (max-width: 400px) {
+                font-size: 30px;
+            }
+        }
+
+        a {
+            justify-self: end;
+
+            button {
+                @include button1;
+
+                @media screen and (max-width: 575px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .ccCards {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+
+        @media screen and (max-width: 991px) {
+            grid-template-columns: 50% 50%;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+
+        .creationCard {
+            position: relative;
+            margin: 15px;
+
+            @media screen and (max-width: 767px) {
+                margin: 15px 0;
+            }
+
+            .ccbg {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 50%;
+                    background: linear-gradient(to top, $black, transparent);
+                    z-index: 0;
+                    transition: all 0.3s ease-in-out;
+
+                    @media screen and (max-width: 767px) {
+                        height: 80%;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .cctext {
+                position: absolute;
+                bottom: 30px;
+                left: 30px;
+                color: $white;
+                font-family: map-get($font-family, light);
+                font-size: 30px;
+                transition: all 0.3s ease-in-out;
+
+                @media screen and (max-width: 767px) {
+                    bottom: 15px;
+                    left: 15px;
+                }
+            }
+
+            &:hover {
+                .ccbg {
+                    &::before {
+                        background: $white;
+                        height: 100%;
+                        opacity: 0.8;
+                    }
+                }
+
+                .cctext {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .ccCardsResp {
+        display: none;
+
+        @media screen and (max-width: 767px) {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+    }
+
+    .buttonResp {
+        display: none;
+        text-align: center;
+
+        @media screen and (max-width: 575px) {
+            display: block;
+        }
+
+        a {
+            button {
+                @include button1;
+                background: $white;
+                color: $black;
+                border: 1px solid $black;
+                padding: 10px 40px;
+                margin-top: 30px;
+            }
+        }
+    }
+}

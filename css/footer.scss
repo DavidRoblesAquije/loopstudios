@@ -1,0 +1,83 @@
+footer {
+    background: $black;
+    color: $white;
+    padding: 40px 0;
+
+    .footerContent {
+        .foot1,
+        .foot2 {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            align-items: center;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 767px) {
+                grid-template-columns: 100%;
+                text-align: center;
+            }
+
+            div {
+                &:nth-child(2) {
+                    justify-self: end;
+
+                    @media screen and (max-width: 767px) {
+                        justify-self: initial;
+                    }
+                }
+            }
+        }
+
+        .foot1 {
+            div {
+                &:nth-child(1) {
+                    img {
+                        width: 135px;
+                    }
+                }
+                &:nth-child(2) {
+                    @media screen and (max-width: 767px) {
+                        position: absolute;
+                        bottom: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100%;
+                    }
+
+                    a {
+                        margin-left: 10px;
+                        @include animation-a;
+
+                        @media screen and (max-width: 767px) {
+                            margin-left: inherit;
+                            margin: 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .foot2 {
+            margin-bottom: 0;
+
+            .links {
+                @media screen and (max-width: 767px) {
+                    display: grid;
+                    grid-row-gap: 15px;
+                    margin-bottom: 80px;
+                }
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    margin-right: 20px;
+                    cursor: pointer;
+
+                    @include animation-a;
+                }
+            }
+
+            .rights{
+                color: $darkGray;
+            }
+        }
+    }
+}
